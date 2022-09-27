@@ -8,12 +8,12 @@
            <lightning-card>
             <lightning-tabset>
                 <lightning-tab label="Account">
-                    <c-custom-types-global
+                    <lightning-combobox
                          key-field="Id"
                          hide-checkbox-column="true" 
                          data={accountMappings}
                          columns={columns}>
-                </c-custom-types-global>
+                </lightning-combobox>
                 </lightning-tab>
                 <lightning-tab label="Contact">
                     <div class="slds-grid">
