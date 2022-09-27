@@ -1,0 +1,22 @@
+<template>
+    <lightning-card title="Followed Case">
+        <div id="btn" class="btn">
+            <button class="slds-float_right" title="Refresh"  onclick={refreshTimeline}>
+                <svg class="slds-button__icon" aria-hidden="true">
+                     <use xlink:href="/_slds/icons/utility-sprite/svg/symbols.svg?cache=9.28.0#refresh"></use>
+                </svg>
+            </button>
+        </div>
+        
+        <div style="height: 200px;margin: 2px,8px,8px,1px;clear:both; position:relative;bottom: 10px;">
+            <template if:true={caseList}>
+                 <lightning-datatable
+                    key-field="id"
+                    data={caseList}
+                    columns={columns}
+                    hide-checkbox-column="true">
+                </lightning-datatable>
+            </template>
+        </div>
+    </lightning-card>
+</template>

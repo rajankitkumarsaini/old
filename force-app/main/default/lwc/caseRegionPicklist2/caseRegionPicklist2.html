@@ -1,0 +1,47 @@
+<template>
+    <lightning-card>
+        <template if:true={priorityValues.data}>
+            <div class="slds-m-around_medium">
+                <lightning-combobox
+                name="Case Priority"
+                label="Case Priority"
+                value={selectedCasePriority}
+                placeholder="Select Priority"
+                options={priorityValues.data.values}
+                onchange={handlePriorityChange} ></lightning-combobox>    
+                <p>Selected Case Priority is: <b>{selectedCasePriority}</b></p>
+            </div>
+        </template>      
+    </lightning-card> <br/>
+    <lightning-card >
+        <template if:true={reasonValues.data}>
+            <div class="slds-m-around_medium">
+                <lightning-combobox
+                name="Case Reason"
+                label="Case Reason"
+                value={selectedcaseReason}
+                placeholder="Select Reason"
+                options={reasonValues.data.values}
+                onchange={handleReasonChange} ></lightning-combobox>    
+                <p>Selected Case Reason is: <b>{selectedcaseReason}</b></p>
+            </div>
+        </template>      
+    </lightning-card> <br/>
+    <lightning-card>
+        <template if:true={originValues.data}>
+            <div class="slds-m-around_medium">
+                <lightning-combobox
+                name="Case Origin"
+                label="Case Origin"
+                value={selectedCaseOrigin}
+                placeholder="Select Origin"
+                options={originValues.data.values}
+                onchange={handleOriginChange} ></lightning-combobox>    
+                <p>Selected Case Origin is: <b>{selectedCaseOrigin}</b></p>
+            </div>
+        </template>      
+    </lightning-card> <br/>
+    
+    
+    
+</template>

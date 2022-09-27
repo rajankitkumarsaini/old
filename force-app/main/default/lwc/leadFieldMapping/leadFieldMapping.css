@@ -1,0 +1,9 @@
+.left{
+    position: relative;
+    bottom: 20px;
+    left: 35px;
+    size: 0.8rem;
+}
+.verticalSpace{
+    margin-top:2.0rem;
+}

@@ -1,0 +1,18 @@
+<template>
+    <lightning-card>
+        <p class="slds-p-horizontal_small">
+            <template if:true={options}>
+                <div class="slds-m-around_medium">
+                    <lightning-combobox
+                    name="Priority"
+                    label="Priority"
+                    value={selectedValue}
+                    placeholder="Select Prority"
+                    options={options}
+                    onchange={handleChange} ></lightning-combobox>    
+                    <p>Selected Priority is:<b>{selectedValue}</b></p>
+                </div >
+            </template>     
+        </p> 
+    </lightning-card><br/>
+</template>

@@ -1,0 +1,16 @@
+<template>
+    <lightning-card>
+        <template if:true={originValues.data}>
+            <div class="slds-m-around_medium">
+                <lightning-combobox
+                name="Case Origin"
+                label="Case Origin"
+                value={selectedCaseOrigin}
+                placeholder="Select Origin"
+                options={originValues.data.values}
+                onchange={handleOriginChange} ></lightning-combobox>    
+            </div>
+        </template>      
+    </lightning-card> <br/>
+    
+</template>

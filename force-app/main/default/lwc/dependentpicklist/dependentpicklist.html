@@ -1,0 +1,14 @@
+<template>
+    <lightning-card title="Select State" icon-name="custom:custom67">
+        <template if:true={stateOptionsList}>
+            <div class="slds-m-around_medium">
+                    <select onchange={handleCountryChange} data-id="selectId" class="slds-select selectStateList" name="selectuser">
+                        <option value="">--None--</option>
+                        <template for:each={stateOptionsList} for:item="item">
+                            <option value={item.label} key={item.label}>{item.label}</option>
+                        </template>
+                    </select>    
+            </div>
+        </template>
+    </lightning-card>    
+</template>

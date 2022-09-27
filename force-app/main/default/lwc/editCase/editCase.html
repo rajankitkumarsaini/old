@@ -1,0 +1,15 @@
+<template>
+    <lightning-card title="Case Creation" icon-name="standard:record">
+        <div class="slds-m-around_medium">
+            <lightning-input type="text" label="Subject" onchange={handleChange} required="true"  class="slds-m-bottom_x-small"></lightning-input>
+            <p>Case Description</p>
+            <lightning-input-rich-text  label="Description"  onchange={handleChange} class="slds-m-bottom_x-small"></lightning-input-rich-text>
+            <c-accountlookup onselected={handleselected}></c-accountlookup >
+            <c-contactlookup onselected={handleContact}></c-contactlookup>
+            <c-caseprioritypicklist onselected ={handlepriority} ></c-caseprioritypicklist>  
+            <c-caseregionpicklist onselected ={handlereason}  ></c-caseregionpicklist>
+            <c-caseoriginpicklist onselected ={handleorigin}  ></c-caseoriginpicklist>       
+           <lightning-button label="Create Case" variant="brand" onclick={createCase}></lightning-button>
+        </div>
+    </lightning-card>
+</template>

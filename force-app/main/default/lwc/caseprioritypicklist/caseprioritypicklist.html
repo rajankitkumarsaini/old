@@ -1,0 +1,17 @@
+<template>
+    <lightning-card>
+        <template if:true={priorityValues.data}>
+            <div class="slds-m-around_medium">
+                <lightning-combobox
+                required="true"
+                name="Case Priority"
+                label="Case Priority"
+                value={selectedCasePriority}
+                placeholder="Select Priority"
+                options={priorityValues.data.values}
+                onchange={handlePriorityChange} ></lightning-combobox>    
+                </div>
+        </template>      
+    </lightning-card> <br/>
+    
+</template>

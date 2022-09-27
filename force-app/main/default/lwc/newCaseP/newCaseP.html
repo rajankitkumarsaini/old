@@ -1,0 +1,45 @@
+<template>
+     
+    <div class="slds-grid">
+       <div class="slds-col slds-size_1-of-4">
+          <span></span>
+       </div>
+
+       <div class="slds-col slds-size_1-of-2" >
+          <span>
+
+             <lightning-record-edit-form object-api-name="Case">
+                <lightning-card title="New Case Creation" icon-name="utility:case">
+                   <br/>
+                   <div style="margin-left: 20px; margin-right: 20px;" >
+                   <lightning-input-field field-name="Subject" required="true"></lightning-input-field>
+                   <lightning-input-field field-name="Description"></lightning-input-field>
+                   <lightning-input-field field-name="Priority" required="true"></lightning-input-field>
+                   <lightning-input-field field-name="ContactId" ></lightning-input-field>
+                   <lightning-input-field field-name = "AccountId" ></lightning-input-field>
+                   <lightning-input-field field-name="Origin" required="true"></lightning-input-field>
+                   <lightning-input-field field-name="Type" required="true"></lightning-input-field>
+                     <div class="btn-bottom-newCase-class">
+                      <lightning-button-group>
+                        <lightning-button class="slds-m-top_small"   name="Cancel"
+                            label="Cancel" onclick={closeAction} >
+                         </lightning-button>
+                         <lightning-button class="slds-m-top_small" variant="brand" type="submit" name="update"
+                         label="Save" onclick={onCreateSaveClick} >
+                         </lightning-button>
+                      </lightning-button-group>
+                   </div>
+                </div>
+                </lightning-card>
+             </lightning-record-edit-form>
+          </span>
+       </div>
+
+       <div class="slds-col slds-size_1-of-4">
+          <span></span>
+       </div>
+
+    </div>
+ 
+
+</template>

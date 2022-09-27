@@ -1,0 +1,30 @@
+<template>
+    <lightning-card  title="Case Snapshot">
+    <div class=" slds-float_right">
+        <lightning-button-group>
+            <lightning-button label="Edit" ></lightning-button>
+            <lightning-button label="Reassign" ></lightning-button>
+            <lightning-button label="Close" ></lightning-button>
+        </lightning-button-group>
+    </div>
+    <c-parentcustomrecordeditform></c-parentcustomrecordeditform>
+    <c-customrecordeditform1></c-customrecordeditform1>
+    
+    <div class="c-container">
+        <lightning-layout>
+            <lightning-layout-item padding="around-small">
+                <lightning-dynamic-icon type="eq" option="play" alternative-text="Recording in progress">
+                </lightning-dynamic-icon>
+            </lightning-layout-item>
+            <lightning-layout-item padding="around-small">
+                The Case Details will go here.
+            </lightning-layout-item>
+          </lightning-layout>
+        </div>
+           
+    
+
+   
+    <p slot="footer">Coming Soon...</p>
+</lightning-card>
+</template>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>54.0</apiVersion>
+    <description>New Case</description>
+    <isExposed>true</isExposed>
+    <masterLabel>New Case</masterLabel>
+    <targets>
+        <target>lightning__AppPage</target>
+        <target>lightning__Tab</target>
+        <target>lightning__RecordPage</target>
+        <target>lightning__FlowScreen</target>
+        <target>lightning__RecordAction</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__FlowScreen">
+            <property name="subject" type="String[]" label="Subject" description="Case Subject"></property>
+            <property name="description" type="String[]" label="Description" description="Case Description"></property>
+            <property name="caccount" type="string[]" label="Caseaccount" description="Case Account"></property>
+            <property name="reason" type="String[]" label="Reason" description="Case Reason"></property>
+            <property name="origin" type="String[]" label="Origin" description="Case Origin"></property>
+            <property name="priority" type="String[]" label="Priority" description="Case Priority"></property>
+            <property name="contact" type="String[]" label="Contact" description="Case Contact"></property>
+        </targetConfig>    
+    </targetConfigs>
+</LightningComponentBundle>

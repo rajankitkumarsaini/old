@@ -1,0 +1,13 @@
+<template>
+    <lightning-card title="You can upload file here " item-name="custom/custom14">
+        <div class="slds-m-around-medium">
+            <lightning-input type="File" label="Attatchment" onchange={openfileupload}></lightning-input>
+        </div>
+        <template if:true={fileData}>
+            <p>fileData.filename</p>
+        </template>
+        <lightning-button variant="brand" label="submit" title="submit" onclick={handleClick} class="slds-left-m-x-small">
+            
+        </lightning-button>
+    </lightning-card>
+</template>

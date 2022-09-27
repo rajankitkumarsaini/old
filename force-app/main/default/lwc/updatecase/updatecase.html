@@ -1,0 +1,13 @@
+<template>
+    <lightning-card lightning-card title="Update Case">
+        <lightning-input label="Case Number" value={realFormData.CaseNumber} read-only></lightning-input>
+        <br/>
+        <lightning-input label="Subject" value={realFormData.Subject} if:true={realFormData} onchange={updateValue}  data-field="Subject"></lightning-input>
+        <br/>
+        <lightning-input label="Account Name" value={realFormData.AccountId} if:true={realFormData} onchange={updateValue}  data-field="AccountName"></lightning-input>
+        <br/>
+        <p>Description</p>
+        <lightning-input-rich-text label="Description" value={realFormData.Description} if:true={realFormData} onchange={updateValue}  data-field="Description"></lightning-input-rich-text>
+        <button  class="slds-button" onclick={saveRecord}> Save Record</button>
+    </lightning-card>
+</template>

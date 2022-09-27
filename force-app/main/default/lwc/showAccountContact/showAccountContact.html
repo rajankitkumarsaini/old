@@ -1,0 +1,65 @@
+<template>
+    <lightning-card class="slds-theme_shade" title="Account-Contact Details" icon-name="standard:catalog" variant="base">
+        <div slot="actions"></div>
+        <div class="slds-card__body_inner">
+            <ul class="slds-has-dividers_bottom-space">
+                <li class="slds-item">
+                    <template for:each={accounts} for:item="acc">
+                        <div class="slds-summary-detail slds-is-open" key={acc.Id}>
+                            <lightning-button-icon class="slds-m-top_small slds-m-right_x-small" alternative-text=""
+                                icon-class="" variant="bare" value={acc.Name}
+                                type="button" icon-name={acc.switchContact} size="medium"
+                                onclick={handleClick}>
+                            </lightning-button-icon>
+
+                            <div class="slds-summary-detail__title slds-m-around_x-small" >
+                                <div class="slds-text-heading_medium">{acc.Name}</div>
+                            </div>
+                        </div>
+                        <template if:true={acc.displayContact}>
+                        <div key={acc.Id}>
+                            <table style="table-layout:fixed">
+                                <col class="slds-col slds-size_1-of-4" />
+                                <tr>
+                                  <th>NAME</th>
+                                  <th>EMAIL</th>
+                                  <th>PHONE</th>
+                                </tr> 
+                            </table>
+                            
+                        </div>
+                        </template>
+                         <template if:true={acc.displayContact} for:each={acc.Contacts}
+                            for:item="con">
+                            <div class="slds-summary-detail__content" key={con.Id}>
+                                
+                                    <table style="table-layout:fixed">
+                                        <col class="slds-col slds-size_1-of-4">
+                                        <!-- <tr>
+                                          <th>NAME</th>
+                                          <th>EMAIL</th>
+                                          <th>PHONE</th>
+                                        </tr> -->
+                                    
+                                        
+                                            <tr>
+                                              <td>{con.Name}</td>
+                                              <td>{con.Email}</td>
+                                              <td>{con.Phone}</td>
+                                            </tr>
+                                            
+                                        </table>
+                                         <!-- <div class="slds-text-heading_small">{con.Name}</div>
+                                        <div style="font-size: 0.8125rem;">{con.Email}</div>
+                                        <div style="font-size: 0.8125rem;">{con.Phone}</div>     
+                                     -->
+                               
+                            </div>
+                        </template>
+                        
+                    </template>
+                </li>
+            </ul>
+        </div>
+    </lightning-card>
+    </template>

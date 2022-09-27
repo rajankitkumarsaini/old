@@ -1,0 +1,28 @@
+<template>
+    <lightning-card>
+    <div class="slds-m-left_small slds-m-right_small">
+    <lightning-input type="text" label="Subject" onchange={handleChange} required="true"  class="slds-m-bottom_x-small"></lightning-input>
+    <p>Case Description</p>
+    <lightning-input-rich-text  label="Description"  onchange={handleChange} class="slds-m-bottom_x-small"></lightning-input-rich-text>
+    </div>
+    <template if:false={caseCreationButton}>
+    <lightning-button variant="brand" label="Attach File" title="Attach File" onclick={handleClick1} class="slds-m-left_x-small"></lightning-button>
+    </template>
+    <template if:true={showfileuploaderComponent}>   
+        <lightning-card title="File Upload Demo LWC" icon-name="custom:custom14">
+            
+            
+                <lightning-file-upload
+                    label="Attach receipt"
+                    name="fileUploader"
+                    accept={acceptedFormats}
+                    record-id={recId}
+                    onuploadfinished={handleUploadFinished}
+                    multiple
+                >
+                </lightning-file-upload>
+            
+        </lightning-card>
+    </template>   
+</lightning-card>  
+</template>

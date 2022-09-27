@@ -1,0 +1,96 @@
+<template>
+    <lightning-card >
+            <div class="slds-p-left_medium slds-m-left_medium">
+            <h1>Custom Fields</h1><br>
+        <p>Use the tabs to map each of your organization's custom lead fields to one of your custom account, contact, or opportunity fields. These mappings are used when you convert leads to accounts, contacts, or opportunities.</p>
+        <br>
+    
+           <lightning-card>
+            <lightning-tabset>
+                <lightning-tab label="Account">
+                    <c-custom-types-global
+                         key-field="Id"
+                         hide-checkbox-column="true" 
+                         data={accountMappings}
+                         columns={columns}>
+                </c-custom-types-global>
+                </lightning-tab>
+                <lightning-tab label="Contact">
+                    <div class="slds-grid">
+                        <div class="slds-col slds-order_2 slds-large-order_1">
+                        <span><lightning-icon icon-name="standard:lead" alternative-text="Lead" title="Lead"></lightning-icon><h1 class="left"><b>Lead Fields</b></h1>
+                            <br>
+                            <h1>Do Not Call</h1>
+                            <div class="verticalSpace">
+                            <h1>Email Opt Out</h1>
+                            </div>
+                            <div class="verticalSpace">
+                            <h1>Email</h1>
+                            </div>
+                            <div class="verticalSpace">
+                            <h1>Lead Source</h1>
+                            </div>
+                            <div class="verticalSpace">
+                            <h1>Mobile</h1>
+                            </div>
+                            <div class="verticalSpace">
+                            <h1>Phone</h1>
+                            </div>
+                            <div class="verticalSpace">
+                            <h1>Description</h1>
+                            </div>
+                           
+                        </span>
+                        </div>
+                        <div class="slds-col slds-order_1 slds-large-order_2">
+                        <span><lightning-icon icon-name="standard:contact" alternative-text="Contact" title="Contact"></lightning-icon><h1 class="left"><b>Contact Fields</b></h1>
+                            <lightning-combobox name="Select Field" label="" value={selectedContactFieldLabelDoNotCall} placeholder="Select Field" options={ContactfieldsLabelOptionsList} onchange={handleContactFieldChangeDoNotCall} ></lightning-combobox>
+                            <lightning-combobox name="Select Field" label="" value={selectedContactFieldLabelEmailOptOut} placeholder="Select Field" options={ContactfieldsLabelOptionsList} onchange={handleContactFieldChangeEmailOptOut} ></lightning-combobox>
+                            <lightning-combobox name="Select Field" label="" value={selectedContactFieldLabelEmail} placeholder="Select Field" options={ContactfieldsLabelOptionsList} onchange={handleContactFieldChangeEmail} ></lightning-combobox>
+                            <lightning-combobox name="Select Field" label="" value={selectedContactFieldLabelLeadSource} placeholder="Select Field" options={ContactfieldsLabelOptionsList} onchange={handleContactFieldChangeLeadSource} ></lightning-combobox>
+                            <lightning-combobox name="Select Field" label="" value={selectedContactFieldLabelMobile} placeholder="Select Field" options={ContactfieldsLabelOptionsList} onchange={handleContactFieldChangeMobile} ></lightning-combobox>
+                            <lightning-combobox name="Select Field" label="" value={selectedContactFieldLabelPhone} placeholder="Select Field" options={ContactfieldsLabelOptionsList} onchange={handleContactFieldChangePhone} ></lightning-combobox>
+                            <lightning-combobox name="Select Field" label="" value={selectedContactFieldLabelDescription} placeholder="Select Field" options={ContactfieldsLabelOptionsList} onchange={handleContactFieldChangeDescription} ></lightning-combobox>
+                            
+                        </span>
+                        </div>
+                        </div>
+                </lightning-tab>
+                <lightning-tab label="Opportunity">
+                    <div class="slds-grid">
+                        <div class="slds-col slds-order_2 slds-large-order_1">
+                        <span><lightning-icon icon-name="standard:lead" alternative-text="Lead" title="Lead"></lightning-icon><h1 class="left"><b>Lead Fields</b></h1>
+                            <br>
+                            <h1>Description</h1>
+                            <div class="verticalSpace">
+                            <h1>Annual Revenue(s)</h1>
+                            </div>
+                            <div class="verticalSpace">
+                            <h1>Current Generator(s)</h1>
+                            </div>
+                            <div class="verticalSpace">
+                            <h1>First Name</h1>
+                            </div>
+                              
+                        </span>
+                        </div>
+                        <div class="slds-col slds-order_1 slds-large-order_2">
+                        <span><lightning-icon icon-name="standard:opportunity" alternative-text="Opportunity" title="Opportunity"></lightning-icon><h1 class="left"><b>Opportunity Fields</b></h1>
+                            <lightning-combobox name="Select Field" label="" value={selectedOpportunityCFieldLabelDescription} placeholder="Select Field" options={OpportunityCfieldsLabelOptionsList} onchange={handleOpportunityCFieldChangeDescription} ></lightning-combobox>
+                            <lightning-combobox name="Select Field" label="" value={selectedOpportunityCFieldLabelAnnualRevenue} placeholder="Select Field" options={OpportunityCfieldsLabelOptionsList} onchange={handleOpportunityCFieldChangeAnnualRevenue} ></lightning-combobox>
+                            <lightning-combobox name="Select Field" label="" value={selectedOpportunityCFieldLabelCurrentGenerator} placeholder="Select Field" options={OpportunityCfieldsLabelOptionsList} onchange={handleOpportunityCFieldChangeCurrentGenerator} ></lightning-combobox>
+                            <lightning-combobox name="Select Field" label="" value={selectedOpportunityCFieldLabelFirstName} placeholder="Select Field" options={OpportunityCfieldsLabelOptionsList} onchange={handleOpportunityCFieldChangeFirstName} ></lightning-combobox>
+                            
+                        </span>
+                        </div>
+                        </div>
+                </lightning-tab>
+            </lightning-tabset>
+            <div class="slds-clearfix slds-var-m-top_small" slot="footer">
+                <lightning-button variant="brand" label="Save" title="Primary action" onclick={handleClickSave} class="slds-float_right"></lightning-button>
+                <lightning-button label="Cancel" title="Non-primary action" onclick={handleClickCancel} class="slds-float_right"></lightning-button>
+            </div>
+        </lightning-card>
+    </div>
+        </lightning-card>
+</template>

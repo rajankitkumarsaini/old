@@ -1,0 +1,17 @@
+<template>
+    <lightning-card >
+        <template if:true={reasonValues.data}>
+            <div class="slds-m-around_medium">
+                <lightning-combobox
+                required="true"
+                name="Case Reason"
+                label="Case Reason"
+                value={selectedcaseReason}
+                placeholder="Select Reason"
+                options={reasonValues.data.values}
+                onchange={handleReasonChange} ></lightning-combobox>    
+                </div>
+        </template>      
+    </lightning-card> <br/>
+    
+</template>
