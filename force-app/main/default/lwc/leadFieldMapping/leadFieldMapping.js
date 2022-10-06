@@ -1,16 +1,16 @@
 import { LightningElement,api,wire,track} from 'lwc';
 import getLeadtoAccountMappings from '@salesforce/apex/AccountLeadMappings.getLeadtoAccountMappings';
-import { getPicklistValues } from 'lightning/uiObjectInfoApi';
 import { getObjectInfo } from 'lightning/uiObjectInfoApi';
-import ACCOUNT_MAPPINGS from '@salesforce/schema/Account_Mappings__c';
-import ACCOUNT_FIELDS from '@salesforce/schema/Account_Mappings__c.Account_Fields__c';
+import { getPicklistValues } from 'lightning/uiObjectInfoApi';
+import ACCOUNT_MAPPINGS__C_OBJECT from '@salesforce/schema/Account_Mappings__c';
+import ACCOUNT_FIELDS__FIELD from '@salesforce/schema/Account_Mappings__c.Account_Fields__c';
 const COLS=[
     { label:'Lead Fields',type:'Text', fieldName:'Lead_Fields__c'},
-     { label:'Account Fields', type:'accountFieldPicklist',fieldName: 'Account_Fields__c',
+     { label:'Account Fields', type:'accountFieldPicklist',fieldName: 'Account_Fields__c',wrapText:true,
         typeAttributes:{
              options: {fieldName:'picklistOptions'},
              value: {fieldName:'Account Fields'},
-             placeholder:'choose Account Field'
+             placeholder:'Choose Account Field'
              
         }
     }
@@ -24,13 +24,14 @@ export default class LeadFieldMapping extends LightningElement{
     accountMappings=[];
     accountMappingsPicklist=[];
 
-    @wire(getObjectInfo,{objectApiName:ACCOUNT_MAPPINGS})
+    @wire(getObjectInfo,{ objectApiName:ACCOUNT_MAPPINGS__C_OBJECT})
     accountMappingsObjectMetadata;
+    
     @wire(getPicklistValues,{
         recordTypeId:'$accountMappingsObjectMetadata.data.defaultRecordTypeId',
-        fieldname:ACCOUNT_FIELDS 
+        fieldApiName:ACCOUNT_FIELDS__FIELD 
     })
-    accountMappingsPicklistValues({data,error}){
+    AccountMappingsPicklistValues({data,error}){
         if(data){
             console.log('picklist values${data}');
             this.accountMappingsPicklist=data.values;
