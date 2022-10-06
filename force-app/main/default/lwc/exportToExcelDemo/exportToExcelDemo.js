@@ -1,12 +1,12 @@
 import {  LightningElement,  track  } from "lwc";  
 import getContacts from "@salesforce/apex/ExportToExcelDemoController.getContacts";  
   const columns = [{  
-      label: "Name",  
+      label: "Quantity",  
       fieldName: "contactName",  
       type: "text"  
     },  
     {  
-      label: "Email",  
+      label: "Price",  
       fieldName: "contactEmail",  
       type: "text"  
     }  
@@ -29,7 +29,7 @@ import getContacts from "@salesforce/apex/ExportToExcelDemoController.getContact
         });  
     }  
     exportToCSV() {  
-      let columnHeader = ["Name", "Email","Contacts Detail"];  // This array holds the Column headers to be displayd
+      let columnHeader = ["Quantiy", "Price","Total"];  // This array holds the Column headers to be displayd
       let jsonKeys = ["contactName", "contactEmail","ContactDetail"]; // This array holds the keys in the json data  
       var jsonRecordsData = this.contactList;  
       console.log('JSON Records Data::'+JSON.stringify(jsonRecordsData));
@@ -58,7 +58,7 @@ import getContacts from "@salesforce/apex/ExportToExcelDemoController.getContact
           console.log('After Checking Condition if False::::'+csvIterativeData);
           if(dataKey=="ContactDetail"){
             let temp=i+2;
-            csvIterativeData += '=A'+temp+'&" "&B'+temp+'';
+            csvIterativeData += '=A'+temp+'*B'+temp+'';
         
           }else {
             csvIterativeData += '""';
