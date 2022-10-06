@@ -4,7 +4,7 @@
     "**/bower_components": true,
     "**/.sfdx": true
   },
-  "salesforcedx-vscode-core.show-cli-success-msg": false,
+  "salesforcedx-vscode-core.show-cli-success-msg": true,
   "salesforcedx-vscode-core.push-or-deploy-on-save.enabled": true,
   "salesforcedx-vscode-core.push-or-deploy-on-save.overrideConflictsOnPush": true,
   "salesforcedx-vscode-core.detectConflictsAtSync": true
