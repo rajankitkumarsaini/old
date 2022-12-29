@@ -72,4 +72,4 @@ import getContacts from "@salesforce/apex/ExportToExcelDemoController.getContact
       console.log("csvIterativeData", csvIterativeData);  
       this.hrefdata = "data:text/csv;charset=utf-8," + encodeURI(csvIterativeData);  
     }  
-  } 
+  }
